@@ -1,7 +1,6 @@
 {
   "name": "@envoy/core",
   "version": "1.0.0",
-  "main": "index.ts",
   "repository": "https://github.com/envoy-js/core",
   "author": "henry232323, pumpkintitan",
   "license": "MIT",
