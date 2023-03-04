@@ -105,7 +105,6 @@
     "skipLibCheck": true,
     /* Skip type checking all .d.ts files. */
     // Added
-    "jsx": "react",
     "module": "ESNext",
     "declaration": true,
     "declarationDir": "types",

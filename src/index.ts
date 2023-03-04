@@ -1,6 +1,18 @@
 import {io} from "socket.io-client";
 
-export class Messenger<MessageType, RoomType> {
+export interface Message {
+    id: string,
+    room_id: string,
+    content: string,
+    author_id: string
+}
+
+export interface Room {
+    id: string,
+    name: string,
+}
+
+export class Messenger<MessageType = Message, RoomType = Room> {
     ws_url: string
     room_key: keyof RoomType
 
@@ -10,12 +22,16 @@ export class Messenger<MessageType, RoomType> {
     }
 }
 
-export class ChatConnection {
-    socket
+export class ChatConnection<MessageType = Message, RoomType = Room> {
+    public socket
+    public messenger
 
-    constructor(ws_url: string) {
-        this.socket = io(ws_url)
+    constructor(messenger: Messenger) {
+        this.messenger = messenger
+        this.socket = io(messenger.ws_url)
     }
 
+    sendMessage(room_id: any, message: any) {
 
+    }
 }
